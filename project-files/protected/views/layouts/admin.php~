@@ -1,0 +1,357 @@
+<?php
+// DISABLE JQUERY AND USE GOOGLE's JQUERY INSTEAD
+$cs = Yii::app()->clientScript;
+$cs->scriptMap = array(
+    'jquery.js' => false,
+    'jquery.ajaxqueue.js' => false,
+    'jquery.metadata.js' => false,
+);
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="en" />
+
+        <!-- blueprint CSS framework -->
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->params->baseCssPath; ?>topics.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>" media="screen, projection" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+        <script src="/javascript/topics.js" type="text/javascript" ></script>
+        <script type="text/javascript" src="/javascript/views/pages/tracking.js"></script>
+
+        <style type='text/css'>
+            /* Styles to go in the master CSS file */
+            /*div { outline:black dashed 1px; }*/
+            .section { clear:both; float:left; }
+            .column { float:left; height:inherit; }
+            .left, .right { width:20%; }
+
+            .middle { width: 55%; }
+            .middle_small { width: 350px; }
+            .content { padding:5px; }
+            .block { /*border:black solid 1px;*/ float: left; width: 90%; }
+            .post {
+                /*border: 1px solid black;*/
+                float: left;
+                clear:both;
+                width: 100%;
+                margin:1px;
+            }
+            .hidden { display:none; }
+            .visible { display:block; }
+            .error { border:2px red solid; }
+            .delete { color:red; }
+
+            /* File-specific styles (regular) */
+            body {
+                font-family: arial;
+                margin: 0px;
+                height: 100%;
+            }
+
+            #header {
+                height:30px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #headerBar {
+                border-bottom: 1px solid #707281;
+                -webkit-box-shadow:0px 0px 5px #aaaaaa; 
+                box-shadow:0px 0px 5px #aaaaaa;
+                width:100%;
+                background: -webkit-gradient(linear,0% 0,0% 100%,from(#d4ecf4),to(#e5f3f8));
+                background: -moz-linear-gradient(270deg,#d4ecf4,#e5f3f8);
+            }
+
+            #pageContainer {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #mainMenu {
+                float: left;
+                margin-top: 20px;
+                margin-left: 95px;
+                height: 35px;
+                width: 400px;
+            }
+
+            #headerLogo {
+                font-weight: bold;
+                color: white;
+                float: left;
+                height: 100%;
+                font-size:30px;
+            }
+
+            #headerUserWidget {
+                float: right;
+                height: 100%;
+                width: 150px;
+                border-bottom:  1px solid #707281;
+                border-top: none;
+                border-collapse: collapse;
+            }
+
+            #userProfileDropDown {
+                border: 1px solid black;
+                background-color: #5FBDCE;
+                border-top: none;
+                border-collapse: collapse;
+                display: none;
+                width: 1000px;
+                float: right;
+
+            }
+
+            #footer {
+                height: 100px;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #footerBar {
+                width: 100%;
+                height: 100px;
+                border-top: 1px solid black;
+                float: left;
+            }
+
+            #contentContainer {
+                min-height: 700px;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+            #navigationTabs {
+                margin-top: 27px;
+                margin-left: 200px;
+                float: left;
+            }
+
+            #navigationTabs ul {
+                margin: 0px;
+                padding: 0px;
+                list-style-type: none;
+            }
+
+            #navigationTabs ul li {
+                display: inline;
+                background-color: blue;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                padding: 5px;
+
+            }
+
+            #navigationTabs ul li a {
+                background-color: transparent;
+                color: #ffffff;
+                text-decoration: none;
+            }
+
+            #navigationTabs ul li a:hover, #navigationTabs ul li.active a {
+                background-color: red;
+            }
+
+            .feedMore {
+                width: 50px;
+                height: 20px;
+                display: block;
+                float:left;
+                cursor: pointer;
+                outline: 1px solid blue;
+            }
+
+            /* PROFILE CARD STYLES */
+            #profileCard {
+                position:fixed;
+                top:35%;
+                left:30%;
+                display:none;
+                width:475px;
+                min-height:200px;
+                border:1px black solid;
+                z-index:10000;
+                background:#e8edff;
+            }
+            /* END OF PROFILE CARD STYLES */
+
+            /* POST CARD STYLES 
+            @TODO Almost identical to #profileCard! 
+            See about better categorizing elements */
+            .postCard {
+                position:fixed;
+                top:35%;
+                left:30%;
+                display:none;
+                width:475px;
+                min-height:200px;
+                border:1px black solid;
+                z-index:10000;
+                background:#e8edff;
+                padding:10px;
+            }
+            /* END OF POST CARD STYLES */
+
+            .favourite { background-color:#00FF00; }
+            .timeSince {
+                font-style: italic;
+                color: #363636;
+                font-size: 12px;
+                font-weight: normal;
+            }
+            .user { text-decoration: none; color: black; }
+            .username {cursor: pointer;}
+            .refresh {float:left;}
+        </style>
+
+
+        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+
+    </head>
+
+    <body>
+        <div id="pageContainer">
+
+            <div id="headerBar">
+                <div id="header">
+                    <div id="headerLogo">Sourst CommandCentre</div>
+                </div><!-- header -->
+            </div>
+            
+            <div id="contentContainer">
+                <?php echo $content; ?>
+            </div>
+
+
+        </div><!-- page_container -->
+
+        <!-- Site-wide position absolute/fixed elements -->
+        <div id="profileCard"></div>
+        <div class="topicCard"></div>
+        <div class="postCard"></div>
+    </body>
+
+<!--</html>
+
+<script type="text/javascript">
+    
+    $(document).ready(function() {
+
+        // load the profileCard for the relevant user
+        $(".username").click(function() {
+            $("#profileCard").html("");
+            $("#profileCard").show().focus();
+            var params = { username:$(this).text() };
+            $("#profileCard").load('/user/ajaxhandler', 
+            { goToFunction:'loadUserCard', params:params });
+
+
+            return false; // prevents card from closing, or other actions
+        });
+        
+       
+    });
+</script>-->
+
+<!-- Script for email invites -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("form.emailInvite input[type=submit]").click(function() {
+            var submitButton = $(this);
+            // disable submit button to ensure users do not click twice
+            submitButton.attr("disabled", "disabled");
+            
+            var emailField = $(this).parents("form").find("input[name=inviteeEmail]");
+            var email = emailField.val();
+            var params = { email:email };
+            var sendData = { goToFunction:'invitePersonToSignup', params:params };
+            
+            $.post(inviteAjaxUrl, 
+            sendData, 
+            function(data) {
+                if (data.success) {
+                    submitButton.removeAttr("disabled"); // re-enable
+                    alert(data.returnData);
+                    emailField.val("");
+                    var numInvites = $(".numInvites").text();
+                    $(".numInvites").text(numInvites - 1);
+                } else {
+                    alert(data.error);
+                }
+            }, "json");
+            
+            return false; // prevent form from sending
+        });
+    });
+</script>
+
+<!-- Script for mini post blocks, eg. youMightLike and youMightHate. -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+        $('.showMoreComments').live("click", function() {
+            var postId = $(this).parent().parent().attr('postId');
+            var offset = $(this).parent().children('.postComments').children('#commentOffset').val();
+            var commentBlock = $(this).parent().children('.postComments');
+            var offsetElement = $(this).parent().children('.postComments').children('#commentOffset');
+            $.post('<?php echo $this->createUrl('post/loadadditionalcomments'); ?>',
+            { postId: postId, offset: offset},
+            function(data) {
+                offsetElement.val(parseInt(offset)+parseInt(data.numComments));
+                $(data.commentsHtml).appendTo(commentBlock).hide().slideDown();
+            }, 'json');
+
+        });
+
+        
+        
+        
+        
+        
+        
+        
+        $('html').live("click", function() {
+            $(".postCard").hide();
+        });
+        $(".postCard").live("click", function (event) {
+            event.stopPropagation();
+        });
+        $(".exit").live("click", function() {
+            //            $(".postCard").hide();
+        });
+        
+        
+        var postCardAjaxUrl = 
+            '<?php echo $this->createUrl('/feed/ajaxhandler'); ?>';
+        $(".postBody.popout").live("click", function() {
+            $(".postCard").html("");
+            $(".postCard").show().focus();
+            var postId = $(this).parents(".post").attr("postId");
+            var params = { postId:postId };
+
+            $.post(postCardAjaxUrl, 
+            { goToFunction:'getSinglePostCard', params:params }, 
+            function(data) {
+                console.log(data);
+                if (data.success) {
+                    $(".postCard").html(data.returnData);
+                } else {
+                    alert(data.error);
+                    $(".postCard").hide();
+                }
+            }, "json");
+                
+            return false; // prevents card from closing, or other actions
+        });
+        
+    });
+    
+    
+</script>

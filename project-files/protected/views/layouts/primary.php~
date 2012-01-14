@@ -1,0 +1,529 @@
+<?php
+// DISABLE JQUERY AND USE GOOGLE's JQUERY INSTEAD
+$cs = Yii::app()->clientScript;
+$cs->scriptMap = array(
+    'jquery.js' => false,
+    'jquery.ajaxqueue.js' => false,
+    'jquery.metadata.js' => false,
+);
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="language" content="en" />
+
+        
+        <!-- @TODO: Dynamic vars for Javascript, later to be externalized somwhere -->
+        <script type='text/javascript'>
+        var protocol = '<?php echo Yii::app()->params['protocol']; ?>';
+        var makePostUrl = '<?php echo $this->createUrl('post/makePost'); ?>';
+        var postLinkSubmitUrl = '<?php echo $this->createUrl('post/processLink'); ?>';
+        var loadRelatedPostsUrl = '<?php echo $this->createUrl('post/loadRelatedPosts'); ?>';
+        var submitFeedbackUrl = '<?php echo $this->createUrl('/user/submitfeedback');?>';
+        var noLeapFrogPostUrl = '<?php echo $this->createUrl('post/noleapfrog'); ?>';
+        var upvotePostUrl = '<?php echo $this->createUrl('post/upvotepost'); ?>';
+        var downvotePostUrl = '<?php echo $this->createUrl('post/downvotepost'); ?>';
+        var favouritePostUrl = '<?php echo $this->createUrl('post/favouritepost'); ?>';
+        
+  </script>
+        
+        <!-- blueprint CSS framework -->
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->params->baseCssPath; ?>topics.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->params->baseCssPath; ?>master.css" media="screen, projection" />
+        <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>" media="screen, projection" />
+        <script src="<?php echo Yii::app()->params['protocol']; ?>ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script src="<?php echo Yii::app()->params['protocol']; ?>ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+        <script src="/javascript/master.js" type="text/javascript" ></script>
+        <script src="/javascript/views/pages/tracking.js" type="text/javascript"></script>
+        <script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+       
+      
+        <style type='text/css'>
+            /* Styles to go in the master CSS file */
+            /*div { outline:black dashed 1px; }*/
+            .section { clear:both; float:left; }
+            .column { float:left; height:inherit; }
+            .left, .right { width:20%; }
+
+            .middle { width: 55%; }
+            .middle_small { width: 350px; }
+            .content { padding:5px; }
+            .block { /*border:black solid 1px;*/ float: left; width: 90%; }
+            .post {
+                /*border: 1px solid black;*/
+                float: left;
+                clear:both;
+                width: 100%;
+                margin:1px;
+            }
+            .hidden { display:none; }
+            .visible { display:block; }
+            .error { border:2px red solid; }
+            .delete { color:red; }
+            .alert { background-color:orange; width:100%; }
+            .small { font-size:small }
+
+            /* File-specific styles (regular) */
+            body {
+                font-family: arial;
+                margin: 0px;
+                height: 100%;
+            }
+
+            #header {
+                width: 1000px;
+                height:50px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #headerBar {
+                border-bottom: 1px solid #707281;
+                -webkit-box-shadow:0px 0px 5px #aaaaaa; 
+                box-shadow:0px 0px 5px #aaaaaa;
+                width:100%;
+                background-color: #333333;
+            }
+
+            #pageContainer {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #mainMenu {
+                float: left;
+                margin-top: 20px;
+                margin-left: 95px;
+                height: 35px;
+                width: 400px;
+            }
+
+            #headerLogo {
+                float: left;
+                width: 200px;
+                margin-top:8px;
+            }
+
+            #headerUserWidget {
+                float: right;
+                height: 100%;
+                width: 150px;
+                border-bottom:  1px solid #707281;
+                border-top: none;
+                border-collapse: collapse;
+            }
+
+            #userProfileDropDown {
+                border: 5px solid #333333;
+                background-color: #DDDDDD;
+                border-top: none;
+                border-collapse: collapse;
+                display: none;
+                width: 1000px;
+                float: right;
+
+            }
+
+            #footer {
+                height: 30px;
+                width: 1000px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #footerBar {
+                width: 100%;
+                height: 30px;
+                /*border-top: 1px solid black; */
+                float: left;
+            }
+
+            #contentContainer {
+                width: 1000px;
+                min-height: 700px;
+                margin-left: auto;
+                margin-right: auto;
+
+            }
+
+            #navigationTabs {
+                margin-top: 27px;
+                margin-left: 200px;
+                float: left;
+            }
+
+            #navigationTabs ul {
+                margin: 0px;
+                padding: 0px;
+                list-style-type: none;
+            }
+
+            #navigationTabs ul li {
+                display: inline;
+                background-color: #CCCCCC;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                padding: 5px;
+
+            }
+
+            #navigationTabs ul li a {
+                background-color: transparent;
+                color: #333333;
+                text-decoration: none;
+            }
+
+            #navigationTabs ul li:hover {
+                background-color: #999999;
+            }
+
+            .feedMore {
+                width: 50px;
+                height: 20px;
+                display: block;
+                float:left;
+                cursor: pointer;
+                outline: 1px solid blue;
+            }
+
+            
+            /* PROFILE CARD STYLES */
+            #profileCard {
+                position:fixed;
+                top:35%;
+                width:475px;
+                /* Move 50% over, then move left half its width */
+                left:50%;
+                margin-left:-238px;
+                
+                display:none;
+                min-height:200px;
+                border:5px black solid;
+                z-index:10000;
+                background:#e8edff;
+            }
+            /* END OF PROFILE CARD STYLES */
+
+            /* POST CARD STYLES 
+            @TODO Almost identical to #profileCard! 
+            See about better categorizing elements */
+            .postCard {
+                position:fixed;
+                top:35%;
+                width:475px;
+                /* Move 50% over, then move left half its width */
+                left:50%;
+                margin-left:-238px;
+                
+                display:none;
+                min-height:200px;
+                border:5px black solid;
+                z-index:10000;
+                background:#e8edff;
+                padding:10px;
+            }
+            /* END OF POST CARD STYLES */
+
+            .favourite { background-color:#00FF00; }
+            .timeSince {
+                font-style: italic;
+                color: #363636;
+                font-size: 12px;
+                font-weight: normal;
+            }
+            .user { text-decoration: none; color: black; }
+            .username {cursor: pointer;}
+            .refresh {float:left;}
+        </style>
+
+        <script type="text/javascript">
+
+            /*
+                    @TODO Deal with onclicks.  Add jquery listeners in a document.ready
+                    function at bottom of file to replace onclicks.
+             */
+            function profileToggle(){
+                $("#userProfileDropDown").slideToggle();
+
+                /*
+                        if($("#userProfileDropDown").css('display') == "none"){
+                        $('#headerUserWidget').css('background-color', '#5FBDCE');
+                        $("#userProfileDropDown").show();
+                        $('#headerUserWidget').css('border-bottom-color', '#5FBDCE');
+                
+                        $("#userProfileDropDown").animate({ width: "100%" },
+                              { queue: false, duration: 650 })
+                                 .animate({ height: "350px" }, 650);
+                
+                        $("#userProfileDropDown").slideDown();
+                        }
+                        else
+                        {
+                            $("#userProfileDropDown").animate( { width: "150px" },
+                              { queue: false, duration: 650 })
+                                 .animate({ height: "0px" }, 650, 'linear', function()
+                                 {
+                                     $("#userProfileDropDown").hide();
+                                     $("#headerUserWidget").css("border-bottom-color", "#000000");
+                                     $('#headerUserWidget').css('background-color', '#FFFF00');
+
+                                 });
+                        }
+                 */
+
+            }
+        </script>
+
+        <title><?php echo CHtml::encode($this->pageTitle); ?></title>
+        
+        <!-- GOOGLE TRACKING CODE ------------------------------------>
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-26988034-1']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+
+        </script>
+        
+    </head>
+
+    <body>
+
+<!-- facebook specific stuff -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- end facebook specific stuff -->
+        <div id="pageContainer">
+
+            <div id="headerBar">
+                <div id="header">
+
+                    <div id="headerLogo">
+                        <img src="<?php echo Yii::app()->params['basePath'].Yii::app()->params['graphics']?>sourstHeaderLogo.png"/>
+                    </div>
+
+                    <?php if (!Yii::app()->user->isGuest): ?>
+                        <div id="navigationTabs">
+
+                            <?php
+                            $this->widget('zii.widgets.CMenu', array(
+                                'items' => array(
+                                    array('label' => 'Home', 'url' => array('/site/index')),
+                                    array('label' => 'Tracking', 'url' => array('/feed/tracking')),
+                                    array('label' => 'Favourites', 'url' => array('/feed/favourites')),
+//                                    array('label' => 'Contact', 'url' => array('/site/contact')),
+                                    array('label' => 'Login', 'url' => array('/site/login'), 'visible' => Yii::app()->user->isGuest),
+                                ),
+                            ));
+                            ?>
+                        </div><!-- navigation_tabs -->
+
+                        <div id="headerUserWidget">
+                            <?php $this->widget('application.widgets.HeaderUserWidget', array()); ?>
+                        </div>
+                    <?php endif; ?>
+
+
+                </div><!-- header -->
+
+            </div>
+
+
+
+            <div id="contentContainer">
+
+                <?php if (!Yii::app()->user->isGuest): ?>
+                    <div id="userProfileDropDown">
+                        <?php $this->widget('application.widgets.UserProfileWidget', array()); ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php echo $content; ?>
+            </div>
+
+            <div id="footerBar">
+                <div id="footer">
+
+                </div><!-- footer -->
+            </div>
+
+        </div><!-- page_container -->
+
+        <!-- Site-wide position absolute/fixed elements -->
+        <div id="profileCard" class="popoutElement"></div>
+        <div class="topicCard popoutElement"></div>
+        <div class="postCard popoutElement"></div>
+    </body>
+
+</html>
+
+<script type="text/javascript">
+    var feedAjaxhandlerUrl = 
+        '<?php echo $this->createUrl('feed/ajaxhandler'); ?>';
+    
+    $(document).ready(function() {
+        
+
+
+        /* window.onresize = function(event) {
+        console.log(document.documentElement.clientWidth);
+
+            if(document.documentElement.clientWidth < 975 )
+            {
+                $('#tipContainer').slideUp();
+                if(document.documentElement.clientWidth < 720 )
+                {
+                    $('.feed').animate(
+                    { width: '300px'}, {queue: false, duration: 1000});
+                    $('.middle').animate({width:'350px'}, 1000);
+                }
+                 if(document.documentElement.clientWidth < 445 )
+                {
+                    $('.left').animate(
+                    { width: '0px'}, {queue: false, duration: 500});
+
+                }
+            }
+            if(document.documentElement.clientHeight < 625)
+            {
+                $('#postSubmissionPanel').slideUp(1000);
+                $('.avatar').slideUp(1000);
+                $('.postMedia').slideUp(1000);
+            }
+     
+
+        }
+
+
+            if(document.documentElement.clientWidth < 975 )
+            {
+                $('#tipContainer').slideUp();
+                if(document.documentElement.clientWidth < 720 )
+                {
+                    $('.feed').animate(
+                    { width: '300px'}, {queue: false, duration: 1000});
+                    $('.middle').animate({width:'350px'}, 1000);
+                }
+            }
+            if(document.documentElement.clientHeight < 625)
+            {
+                $('#postSubmissionPanel').slideUp(1000);
+                $('.avatar').slideUp(1000);
+                $('.postMedia').slideUp(1000);
+            }
+
+         */
+    });
+</script>
+
+<!-- Script for email invites -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("form.emailInvite input[type=submit]").click(function() {
+            var submitButton = $(this);
+            // disable submit button to ensure users do not click twice
+            submitButton.attr("disabled", "disabled");
+            
+            var emailField = $(this).parents("form").find("input[name=inviteeEmail]");
+            var email = emailField.val();
+            var params = { email:email };
+            var sendData = { goToFunction:'invitePersonToSignup', params:params };
+            
+            $.post(inviteAjaxUrl, 
+            sendData, 
+            function(data) {
+                if (data.success) {
+                    submitButton.removeAttr("disabled"); // re-enable
+                    alert(data.returnData);
+                    emailField.val("");
+                    var numInvites = $(".numInvites").text();
+                    $(".numInvites").text(numInvites - 1);
+                } else {
+                    alert(data.error);
+                }
+            }, "json");
+            
+            return false; // prevent form from sending
+        });
+    });
+</script>
+
+<!-- Script for mini post blocks, eg. youMightLike and youMightHate. -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        
+        /** 
+         * @TODO Note: Cannot move this code into a .js file because of the 
+         * use of PHP. Figure this out!
+         */
+        $('.showMoreComments').live("click", function() {
+            var showMoreCommentsButton = $(this);
+            var postId = $(this).parent().parent().attr('postId');
+            var offset = $(this).parent().children('.postComments').children('#commentOffset').val();
+            var commentTotal = $(this).parent().children('.postComments').children('#commentTotal').val();
+            var commentBlock = $(this).parent().children('.postComments');
+            var offsetElement = $(this).parent().children('.postComments').children('#commentOffset');
+            $.post('<?php echo $this->createUrl('post/loadAdditionalComments'); ?>',
+            { postId: postId, offset: offset},
+            function(data) {
+                var newOffset = parseInt(offset)+parseInt(data.numComments);
+                offsetElement.val(newOffset);
+                if(commentTotal <= newOffset)
+                {
+                    $(showMoreCommentsButton).hide();
+                }
+                $(data.commentsHtml).appendTo(commentBlock).hide().slideDown();
+            }, 'json');
+
+        });
+        
+        $('html').live("click", function() {
+            $(".postCard").hide();
+        });
+        $(".postCard").live("click", function (event) {
+            event.stopPropagation();
+        });
+        $(".exit").live("click", function() {
+            //            $(".postCard").hide();
+        });
+        
+        
+        var postCardAjaxUrl = 
+            '<?php echo $this->createUrl('/feed/ajaxhandler'); ?>';
+        $(".postBody.popout").live("click", function() {
+            $(".popoutElement").hide();
+            $(".postCard").html("");
+            $(".postCard").show().focus();
+            var postId = $(this).parents(".post").attr("postId");
+            var params = { postId:postId };
+
+            $.post(postCardAjaxUrl, 
+            { goToFunction:'getSinglePostCard', params:params }, 
+            function(data) {
+                console.log(data);
+                if (data.success) {
+                    $(".postCard").html(data.returnData);
+                } else {
+                    alert(data.error);
+                    $(".postCard").hide();
+                }
+            }, "json");
+                
+            return false; // prevents card from closing, or other actions
+        });
+        
+    });
+    
+    
+</script>

@@ -1,0 +1,30 @@
+RewriteEngine ON
+
+
+# Make all URL's lowercase
+# Note that we require "RewriteMap lc int:tolower" in httpd.conf
+# RewriteCond %{REQUEST_URI} [A-Z]
+# RewriteRule ^[\/]*(.*)$ /${lc:$1} [R=301,L]
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# otherwise forward it to index.php
+RewriteRule . index.php
+
+# Does this do anything?
+#RewriteCond %{HTTP_HOST} !^(.+\.)?(.+)?$
+#RewriteCond %{HTTP_HOST} !^[\d\.]{7,15}$
+#RewriteRule ^(.*)$ ${lowercase:%{HTTP_HOST}}/$1 [R=301,L]
+# TEST: RewriteRule ^(.*)$ http://google.com
+
+# redirect users to https, always
+#RewriteCond %{HTTPS} !=on
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
+# RewriteRule ^(.*)$ https://upverter.com
+
+# what is this??
+<IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/xhtml text/html text/plain text/xml text/javascript application/x-javascript text/css
+</IfModule>

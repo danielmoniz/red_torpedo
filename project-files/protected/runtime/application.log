@@ -1,0 +1,411 @@
+2011/09/11 13:41:32 [error] [php] include(RWebUser.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory (/home/daniel/www/mountdoom.com/public_html/framework/YiiBase.php:421)
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/YiiBase.php(201): import()
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CModule.php(371): createComponent()
+#2 /home/daniel/www/mountdoom.com/public_html/framework/base/CModule.php(86): CWebApplication->getComponent()
+#3 /home/daniel/www/mountdoom.com/public_html/mountdoom/protected/views/layouts/main.php(34): CWebApplication->__get()
+#4 /home/daniel/www/mountdoom.com/public_html/framework/web/CBaseController.php(119): require()
+#5 /home/daniel/www/mountdoom.com/public_html/framework/web/CBaseController.php(88): SiteController->renderInternal()
+#6 /home/daniel/www/mountdoom.com/public_html/framework/web/widgets/CContentDecorator.php(78): SiteController->renderFile()
+#7 /home/daniel/www/mountdoom.com/public_html/framework/web/widgets/CContentDecorator.php(56): CContentDecorator->decorate()
+#8 /home/daniel/www/mountdoom.com/public_html/framework/web/widgets/COutputProcessor.php(45): CContentDecorator->processOutput()
+#9 /home/daniel/www/mountdoom.com/public_html/framework/web/CBaseController.php(199): CContentDecorator->run()
+#10 /home/daniel/www/mountdoom.com/public_html/framework/web/CBaseController.php(294): SiteController->endWidget()
+#11 /home/daniel/www/mountdoom.com/public_html/mountdoom/protected/views/layouts/column1.php(7): SiteController->endContent()
+#12 /home/daniel/www/mountdoom.com/public_html/framework/web/CBaseController.php(119): require()
+#13 /home/daniel/www/mountdoom.com/public_html/framework/web/CBaseController.php(88): SiteController->renderInternal()
+#14 /home/daniel/www/mountdoom.com/public_html/framework/web/CController.php(781): SiteController->renderFile()
+#15 /home/daniel/www/mountdoom.com/public_html/mountdoom/protected/controllers/SiteController.php(32): SiteController->render()
+#16 /home/daniel/www/mountdoom.com/public_html/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#17 /home/daniel/www/mountdoom.com/public_html/framework/web/CController.php(300): CInlineAction->runWithParams()
+#18 /home/daniel/www/mountdoom.com/public_html/framework/web/CController.php(278): SiteController->runAction()
+#19 /home/daniel/www/mountdoom.com/public_html/framework/web/CController.php(257): SiteController->runActionWithFilters()
+#20 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(277): SiteController->run()
+#21 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController()
+#22 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#23 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CWebApplication->run()
+REQUEST_URI=/
+in /home/daniel/www/mountdoom.com/public_html/mountdoom/protected/views/layouts/main.php (34)
+in /home/daniel/www/mountdoom.com/public_html/mountdoom/protected/views/layouts/column1.php (7)
+in /home/daniel/www/mountdoom.com/public_html/mountdoom/protected/controllers/SiteController.php (32)
+2011/09/12 00:27:52 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 00:27:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 00:27:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 00:27:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 00:30:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 00:30:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 00:30:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 00:30:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 00:30:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/09/12 17:32:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "favicon.ico".' in /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/daniel/www/mountdoom.com/public_html/framework/web/CWebApplication.php(136): CWebApplication->runController('favicon.ico')
+#1 /home/daniel/www/mountdoom.com/public_html/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/daniel/www/mountdoom.com/public_html/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/favicon.ico
+2011/11/02 17:56:00 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user 'sauron'@'localhost' (using password: YES)' in /home/jack/Operation-Mount-Doom/framework/db/CDbConnection.php:364
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/db/CDbConnection.php(313): CDbConnection->open()
+#1 /home/jack/Operation-Mount-Doom/framework/db/CDbConnection.php(291): CDbConnection->setActive(true)
+#2 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(372): CDbConnection->init()
+#3 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(86): CModule->getComponent('db')
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/User.php(181): CModule->__get('db')
+#5 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/User.php(40): User->getMemberDetailsByUsername(NULL)
+#6 /home/jack/Operation-Mount-Doom/mountdoom/protected/widgets/UserProfileWidget.php(6): User->__construct(NULL)
+#7 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(166): userProfileWidget->run()
+#8 /home/jack/Operation-Mount-Doom/mountdoom/protected/views/layouts/primary.php(258): CBaseController->widget('application.wid...', Array)
+#9 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(119): require('/home/jack/Oper...')
+#10 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(88): CBaseController->renderInternal('/home/jack/Oper...', Array, true)
+#11 /home/jack/Operation-Mount-Doom/framework/web/CController.php(781): CBaseController->renderFile('/home/jack/Oper...', Array, true)
+#12 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/SiteController.php(42): CController->render('/pages/landing', Array)
+#13 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#14 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#15 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#16 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('index')
+#18 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('site/index')
+#19 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#20 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#21 {main} REQUEST_URI=/
+2011/11/02 18:13:23 [error] [exception.CException] exception 'CException' with message 'CAssetManager.basePath "/home/jack/Operation-Mount-Doom/mountdoom/assets" is invalid. Please make sure the directory exists and is writable by the Web server process.' in /home/jack/Operation-Mount-Doom/framework/web/CAssetManager.php:112
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CAssetManager.php(97): CAssetManager->setBasePath('/home/jack/Oper...')
+#1 /home/jack/Operation-Mount-Doom/framework/web/CAssetManager.php(207): CAssetManager->getBasePath()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/protected/extensions/EAjaxUpload/EAjaxUpload.php(79): CAssetManager->publish('/home/jack/Oper...')
+#3 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(166): EAjaxUpload->run()
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/widgets/views/userProfileWidget.php(93): CBaseController->widget('ext.EAjaxUpload...', Array)
+#5 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(123): require('/home/jack/Oper...')
+#6 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(88): CBaseController->renderInternal('/home/jack/Oper...', Array, false)
+#7 /home/jack/Operation-Mount-Doom/framework/web/widgets/CWidget.php(242): CBaseController->renderFile('/home/jack/Oper...', Array, false)
+#8 /home/jack/Operation-Mount-Doom/mountdoom/protected/widgets/UserProfileWidget.php(28): CWidget->render('userProfileWidg...', Array)
+#9 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(166): userProfileWidget->run()
+#10 /home/jack/Operation-Mount-Doom/mountdoom/protected/views/layouts/primary.php(258): CBaseController->widget('application.wid...', Array)
+#11 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(119): require('/home/jack/Oper...')
+#12 /home/jack/Operation-Mount-Doom/framework/web/CBaseController.php(88): CBaseController->renderInternal('/home/jack/Oper...', Array, true)
+#13 /home/jack/Operation-Mount-Doom/framework/web/CController.php(781): CBaseController->renderFile('/home/jack/Oper...', Array, true)
+#14 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/SiteController.php(42): CController->render('/pages/landing', Array)
+#15 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): SiteController->actionIndex()
+#16 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#17 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#18 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('index')
+#20 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('site/index')
+#21 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#22 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#23 {main} REQUEST_URI=/
+2011/11/02 18:13:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/_40x40.jpg
+2011/11/02 18:13:54 [error] [exception.CException] exception 'CException' with message 'The YiiSolr extension requires the PHP Solr extension to be loaded. Please see http://php.net/manual/en/book.solr.php for more information on this extension.' in /home/jack/Operation-Mount-Doom/mountdoom/protected/extensions/ESolarium.php:47
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(372): ESolarium->init()
+#1 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(86): CModule->getComponent('postSearchSolrC...')
+#2 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(30) : runtime-created function(1): CModule->__get('postSearchSolrC...')
+#3 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(31): __lambda_func(Object(Post), 3)
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(515): PostMatcher->findRelatedPosts(Object(Post), 3)
+#5 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(451): PostSet->getRelatedPosts('1', Array, 3)
+#6 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(57): PostSet->getMainFeedPosts(0, 5)
+#7 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(9): FeedController->buildHomeFeed()
+#8 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): FeedController->actionHome()
+#9 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('home')
+#13 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('feed/home')
+#14 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/feed/home
+2011/11/02 18:17:24 [error] [exception.CException] exception 'CException' with message 'The YiiSolr extension requires the PHP Solr extension to be loaded. Please see http://php.net/manual/en/book.solr.php for more information on this extension.' in /home/jack/Operation-Mount-Doom/mountdoom/protected/extensions/ESolarium.php:47
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(372): ESolarium->init()
+#1 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(86): CModule->getComponent('postSearchSolrC...')
+#2 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(30) : runtime-created function(1): CModule->__get('postSearchSolrC...')
+#3 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(31): __lambda_func(Object(Post), 3)
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(515): PostMatcher->findRelatedPosts(Object(Post), 3)
+#5 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(451): PostSet->getRelatedPosts('1', Array, 3)
+#6 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(57): PostSet->getMainFeedPosts(0, 5)
+#7 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(9): FeedController->buildHomeFeed()
+#8 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): FeedController->actionHome()
+#9 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('home')
+#13 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('feed/home')
+#14 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/feed/home
+2011/11/02 18:17:28 [error] [exception.CException] exception 'CException' with message 'The YiiSolr extension requires the PHP Solr extension to be loaded. Please see http://php.net/manual/en/book.solr.php for more information on this extension.' in /home/jack/Operation-Mount-Doom/mountdoom/protected/extensions/ESolarium.php:47
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(372): ESolarium->init()
+#1 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(86): CModule->getComponent('postSearchSolrC...')
+#2 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(30) : runtime-created function(1): CModule->__get('postSearchSolrC...')
+#3 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(31): __lambda_func(Object(Post), 3)
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(515): PostMatcher->findRelatedPosts(Object(Post), 3)
+#5 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(451): PostSet->getRelatedPosts('1', Array, 3)
+#6 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(57): PostSet->getMainFeedPosts(0, 5)
+#7 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(9): FeedController->buildHomeFeed()
+#8 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): FeedController->actionHome()
+#9 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('home')
+#13 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('feed/home')
+#14 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/feed/home
+2011/11/02 18:17:51 [error] [exception.CException] exception 'CException' with message 'The YiiSolr extension requires the PHP Solr extension to be loaded. Please see http://php.net/manual/en/book.solr.php for more information on this extension.' in /home/jack/Operation-Mount-Doom/mountdoom/protected/extensions/ESolarium.php:47
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(372): ESolarium->init()
+#1 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(86): CModule->getComponent('postSearchSolrC...')
+#2 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(30) : runtime-created function(1): CModule->__get('postSearchSolrC...')
+#3 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(31): __lambda_func(Object(Post), 3)
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(515): PostMatcher->findRelatedPosts(Object(Post), 3)
+#5 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(451): PostSet->getRelatedPosts('1', Array, 3)
+#6 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(57): PostSet->getMainFeedPosts(0, 5)
+#7 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(9): FeedController->buildHomeFeed()
+#8 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): FeedController->actionHome()
+#9 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('home')
+#13 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('feed/home')
+#14 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/feed/home
+2011/11/02 18:17:52 [error] [exception.CException] exception 'CException' with message 'The YiiSolr extension requires the PHP Solr extension to be loaded. Please see http://php.net/manual/en/book.solr.php for more information on this extension.' in /home/jack/Operation-Mount-Doom/mountdoom/protected/extensions/ESolarium.php:47
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(372): ESolarium->init()
+#1 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(86): CModule->getComponent('postSearchSolrC...')
+#2 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(30) : runtime-created function(1): CModule->__get('postSearchSolrC...')
+#3 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(31): __lambda_func(Object(Post), 3)
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(515): PostMatcher->findRelatedPosts(Object(Post), 3)
+#5 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(451): PostSet->getRelatedPosts('1', Array, 3)
+#6 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(57): PostSet->getMainFeedPosts(0, 5)
+#7 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(9): FeedController->buildHomeFeed()
+#8 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): FeedController->actionHome()
+#9 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('home')
+#13 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('feed/home')
+#14 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/feed/home
+2011/11/02 18:17:53 [error] [exception.CException] exception 'CException' with message 'The YiiSolr extension requires the PHP Solr extension to be loaded. Please see http://php.net/manual/en/book.solr.php for more information on this extension.' in /home/jack/Operation-Mount-Doom/mountdoom/protected/extensions/ESolarium.php:47
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(372): ESolarium->init()
+#1 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(86): CModule->getComponent('postSearchSolrC...')
+#2 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(30) : runtime-created function(1): CModule->__get('postSearchSolrC...')
+#3 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(31): __lambda_func(Object(Post), 3)
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(515): PostMatcher->findRelatedPosts(Object(Post), 3)
+#5 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(451): PostSet->getRelatedPosts('1', Array, 3)
+#6 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(57): PostSet->getMainFeedPosts(0, 5)
+#7 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(9): FeedController->buildHomeFeed()
+#8 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): FeedController->actionHome()
+#9 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('home')
+#13 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('feed/home')
+#14 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/feed/home
+2011/11/02 18:17:53 [error] [exception.CException] exception 'CException' with message 'The YiiSolr extension requires the PHP Solr extension to be loaded. Please see http://php.net/manual/en/book.solr.php for more information on this extension.' in /home/jack/Operation-Mount-Doom/mountdoom/protected/extensions/ESolarium.php:47
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(372): ESolarium->init()
+#1 /home/jack/Operation-Mount-Doom/framework/base/CModule.php(86): CModule->getComponent('postSearchSolrC...')
+#2 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(30) : runtime-created function(1): CModule->__get('postSearchSolrC...')
+#3 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostMatcher.php(31): __lambda_func(Object(Post), 3)
+#4 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(515): PostMatcher->findRelatedPosts(Object(Post), 3)
+#5 /home/jack/Operation-Mount-Doom/mountdoom/protected/models/PostSet.php(451): PostSet->getRelatedPosts('1', Array, 3)
+#6 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(57): PostSet->getMainFeedPosts(0, 5)
+#7 /home/jack/Operation-Mount-Doom/mountdoom/protected/controllers/FeedController.php(9): FeedController->buildHomeFeed()
+#8 /home/jack/Operation-Mount-Doom/framework/web/actions/CInlineAction.php(50): FeedController->actionHome()
+#9 /home/jack/Operation-Mount-Doom/framework/web/CController.php(300): CInlineAction->runWithParams(Array)
+#10 /home/jack/Operation-Mount-Doom/framework/web/CController.php(278): CController->runAction(Object(CInlineAction))
+#11 /home/jack/Operation-Mount-Doom/framework/web/CController.php(257): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(277): CController->run('home')
+#13 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('feed/home')
+#14 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#15 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#16 {main} REQUEST_URI=/feed/home
+2011/11/02 18:20:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810008_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810008_200x150.jpg
+2011/11/02 18:20:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:20:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810005_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810005_200x150.jpg
+2011/11/02 18:20:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810005_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810005_200x150.jpg
+2011/11/02 18:20:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:20:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810008_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810008_200x150.jpg
+2011/11/02 18:20:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810005_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810005_200x150.jpg
+2011/11/02 18:20:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810008_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810008_200x150.jpg
+2011/11/02 18:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:21:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810005_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810005_200x150.jpg
+2011/11/02 18:21:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:21:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810008_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810008_200x150.jpg
+2011/11/02 18:22:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:22:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:22:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:22:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810008_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810008_200x150.jpg
+2011/11/02 18:22:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/postimages/0/1/1_1318810005_200x150.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/postimag...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/postimages/0/1/1_1318810005_200x150.jpg
+2011/11/02 18:24:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:24:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:24:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg
+2011/11/02 18:24:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/avatars/0/1_40x40.jpg".' in /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php:281
+Stack trace:
+#0 /home/jack/Operation-Mount-Doom/framework/web/CWebApplication.php(136): CWebApplication->runController('images/avatars/...')
+#1 /home/jack/Operation-Mount-Doom/framework/base/CApplication.php(158): CWebApplication->processRequest()
+#2 /home/jack/Operation-Mount-Doom/mountdoom/index.php(13): CApplication->run()
+#3 {main} REQUEST_URI=/images/avatars/0/1_40x40.jpg

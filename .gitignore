@@ -1,0 +1,8 @@
+protected/runtime
+project-files/assets
+nbproject
+.project
+*.bak
+project-files/protected/config/local.php
+project-files/protected/config/mode.php
+project-files/protected/config/main.php

@@ -1,0 +1,51 @@
+.topic {
+    float:left;
+    cursor: default;
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #D6D6D6;
+    border-right: 1px solid #D6D6D6;
+}
+
+.topic:hover {
+    background-color: #BBBBBB;
+}
+
+.topicCard {
+    position:absolute;
+    font-weight: bold;
+    display:none;
+    float:left;
+    cursor: pointer;
+    border: 2px solid #333333;
+    background-color:#EEEEEE;
+}
+
+.topicCard:hover {
+    background-color: #BBBBBB;
+}
+
+.topicSection {
+    float :left;
+    padding: 2px;
+}
+
+.topicSection .visible {
+    display:inline;
+}
+
+.topicCard {
+    font-size:smaller;
+}
+
+/* DEALS WITH TOPIC AUTOCOMPLETION
+*/
+.interestsAutocomplete {
+    border: 4px solid #333333;
+    background:white;
+    float:left;
+    margin:-2px 0 0 2px;
+/*                border:1px black solid;*/
+}
+.interestsAutocomplete .topic {
+    border:1px black solid;
+}

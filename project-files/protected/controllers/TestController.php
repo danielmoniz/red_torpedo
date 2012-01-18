@@ -10,6 +10,11 @@ class TestController extends Controller {
     {
         $this->render('/pages/main');
     }
+    
+    public function actionDan2()
+    {
+        $this->render('/pages/testBoard');
+    }
 
     // PERMISSIONS CODE---------------------------------------
     /**

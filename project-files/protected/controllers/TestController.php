@@ -8,7 +8,7 @@ class TestController extends Controller {
     
     public function actionDan()
     {
-        $this->render('/pages/main');
+        $this->render('/pages/testBoardDan');
     }
     
     public function actionDan2()
